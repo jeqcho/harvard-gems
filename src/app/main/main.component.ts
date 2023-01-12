@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import super_gems from "../data/super_gems.json";
+import legendary_courses from "../data/legendary_courses.json";
+import great_courses from "../data/great_courses.json";
 import department_list from "../data/department_list.json"
 import { HttpClient } from '@angular/common/http';
 
@@ -13,6 +15,8 @@ export class MainComponent {
   constructor(private http: HttpClient) { }
 
   super_gems = super_gems;
+  legendary_courses = legendary_courses;
+  great_courses = great_courses;
   full_department_list = department_list;
   special_list = [
     "General Education",
@@ -20,6 +24,7 @@ export class MainComponent {
     "Expository Writing"
   ]
   partial_department_list = department_list;
+  selected_great_courses = great_courses;
 
 
   department_gems: Record<string, any> = {}
@@ -37,21 +42,22 @@ export class MainComponent {
       this.partial_department_list = this.partial_department_list.filter(x => x !== spec_department);
     }
 
+    for (let legendary_course of this.legendary_courses) {
+      this.great_courses = this.great_courses.filter(x => x.useful_title !== legendary_course['useful_title']);
+    }
+    this.selected_great_courses = this.great_courses.filter(x => !x.course_code.startsWith("EXPOS"));
+
+
     this.special_list = this.special_list.filter(x => x !== 'Expository Writing');
 
     for (let department of department_list) {
       this.getDataHttp(`assets/data/departments/${department}.json`).subscribe(
         (data: any) => {
-          var testResponse = data;
           this.department_gems[department] = data;
         }
       )
-
-      // import(`../data/departments/${department}.json`).then((data) => {
-      //   console.dir(data)
-      //   this.department_gems[department] = data;
-      // }).catch(error => { debugger; alert(error.message) });
     }
+
   }
 }
 
