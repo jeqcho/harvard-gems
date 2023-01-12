@@ -40,7 +40,7 @@ export class MainComponent {
     this.special_list = this.special_list.filter(x => x !== 'Expository Writing');
 
     for (let department of department_list) {
-      this.getDataHttp(`/assets/data/departments/${department}.json`).subscribe(
+      this.getDataHttp(`assets/data/departments/${department}.json`).subscribe(
         (data: any) => {
           var testResponse = data;
           this.department_gems[department] = data;
