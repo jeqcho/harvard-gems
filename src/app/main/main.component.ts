@@ -25,6 +25,7 @@ export class MainComponent {
   ]
   partial_department_list = department_list;
   selected_great_courses = great_courses;
+  expos: any;
 
 
   department_gems: Record<string, any> = {}
@@ -50,13 +51,19 @@ export class MainComponent {
 
     this.special_list = this.special_list.filter(x => x !== 'Expository Writing');
 
+
+
     for (let department of department_list) {
       this.getDataHttp(`assets/data/departments/${department}.json`).subscribe(
         (data: any) => {
           this.department_gems[department] = data;
+          if(department == "Expository Writing"){
+            this.expos = this.department_gems['Expository Writing'].filter((x: any) => x.course_code != "EXPOS 40")
+          }
         }
       )
     }
+
 
   }
 }
