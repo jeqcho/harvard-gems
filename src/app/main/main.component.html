@@ -2,8 +2,8 @@
 
   <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">Harvard
     Gems for Spring 2023</h1>
-  <p class="text-lg font-normal text-gray-500 lg:text-xl mb-4">The best gems out of 4503 classes offered by the
-    Faculty of Arts and Science.</p>
+  <p class="text-lg font-normal text-gray-500 lg:text-xl mb-4">The best gems out of 4,503 classes offered by the
+    Harvard Faculty of Arts and Sciences.</p>
 
 
 
@@ -12,9 +12,10 @@
     <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
       <div>
         <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Super Gems 💎</p>
-        <p class="text-xs leading-3 text-gray-600 pt-2">Super Gems received perfect course ratings of 5, lecturer ratings of
-          5, and recommendation scores of 5 (with enthusiasm), from more than 50% of their students. More super gems can
-          be found at the bottom of the page.</p>
+        <p class="text-xs leading-3 text-gray-600 pt-2">Super Gems received perfect course ratings of 5, lecturer
+          ratings of
+          5, and recommendation scores of 5 (with enthusiasm), from more than 50% of their students. More Super Gems can
+          be found at the page bottom.</p>
       </div>
     </div>
     <div class="bg-white shadow overflow-y-auto">
@@ -68,7 +69,8 @@
         <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Legendary Courses
         </p>
         <p class="text-xs leading-3 text-gray-600 pt-2">Legendary Courses are not known as gems, but
-          they receive perfect scores for the course, lecturer and recommendation from all of their students.</p>
+          they receive perfect scores for the course, lecturer and recommendation from all of their students. More Legendary Courses can
+          be found at the page bottom.</p>
       </div>
     </div>
     <div class="bg-white shadow overflow-y-auto">
@@ -83,7 +85,7 @@
           </tr>
         </thead>
         <tbody class="w-full">
-          <tr *ngFor="let super_gem of legendary_courses"
+          <tr *ngFor="let super_gem of legendary_courses | slice:0:5"
             class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
             <td class="pl-4 cursor-pointer">
               <div class="flex items-center py-2">
@@ -173,7 +175,7 @@
   <div class="w-full pt-5 pb-10" *ngFor="let department of special_list">
     <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
       <div>
-        <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">{{department}}</p>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Gems in {{department}}</p>
       </div>
     </div>
     <div class="bg-white shadow overflow-y-auto" *ngIf="department_gems[department]">
@@ -227,7 +229,7 @@
   <div class="w-full pt-5 pb-10">
     <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
       <div>
-        <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Expository Writing
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Gems in Expository Writing
         </p>
       </div>
     </div>
@@ -382,11 +384,63 @@
       </table>
     </div>
   </div>
+  <div class="w-full pt-5 pb-10">
+    <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+      <div>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">All Legendary Courses
+        </p>
+      </div>
+    </div>
+    <div class="bg-white shadow overflow-y-auto">
+      <table class="w-full whitespace-nowrap">
+        <thead>
+          <tr class="h-16 w-full text-sm leading-none text-gray-800">
+            <th class="font-normal text-left pl-4">Course</th>
+            <th class="font-normal text-left pl-12">Rating</th>
+            <th class="font-normal text-left pl-10">Workload</th>
+            <th class="font-normal text-left pl-10">Selected comments</th>
+            <th class="font-normal text-left pl-10">Links</th>
+          </tr>
+        </thead>
+        <tbody class="w-full">
+          <tr *ngFor="let super_gem of legendary_courses"
+            class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+            <td class="pl-4 cursor-pointer">
+              <div class="flex items-center py-2">
+                <div>
+                  <p class="font-medium">{{super_gem.course_code}}</p>
+                  <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                    {{super_gem.useful_title}}</p>
+                </div>
+              </div>
+            </td>
+            <td class="pl-12">
+              <p class="text-sm font-medium leading-none text-gray-800">{{super_gem.course_score_mean}} (Overall)</p>
+              <p class="text-xs leading-3 text-gray-600 mt-2">{{super_gem.rec_score_mean}} (Recommend)</p>
+            </td>
+            <td class="pl-10">
+              <p class="font-medium">{{super_gem.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+            </td>
+            <td class="pl-10 py-2">
+              <p class=" whitespace-normal">{{super_gem.best_comment_short}}</p>
+            </td>
+            <td class="pl-10 pr-4">
+              <a href="{{url_prefix + super_gem.useful_title + url_suffix}}" target="_blank"
+                class="font-medium text-blue-600  hover:underline">my.harvard</a>
+              <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                Guide</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <div class="w-full pt-5 pb-10">
     <div class="px-4 py-10 md:px-10 bg-gray-100 rounded-tl-lg rounded-tr-lg">
       <div>
-        <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">All Great Courses</p>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">All Great Courses
+        </p>
       </div>
     </div>
     <div class="bg-white shadow overflow-y-auto">
