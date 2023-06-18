@@ -1,0 +1,96 @@
+<body class="py-8 px-2 sm:px-6">
+
+  <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">Harvard
+    Gems</h1>
+  <p class="text-lg font-normal text-gray-500 lg:text-xl mb-4">The best classes with minimal workload.</p>
+
+  <div class="w-full pt-5 pb-10">
+    <div class="bg-white shadow overflow-y-auto">
+      <table class="w-full whitespace-nowrap">
+        <tbody class="w-full">
+          <tr *ngFor="let item of archive_list"
+            class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+            <td class="pl-4 cursor-pointer">
+              <div class="flex items-center py-2">
+                <div>
+                  <p class="font-medium">{{item[0]}}</p>
+                </div>
+              </div>
+            </td>
+            <td class="pl-10 pr-4">
+              <a href="{{item[1]}}" target="_blank"
+                class="font-medium text-blue-600  hover:underline">Visit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <section class="bg-white">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-10 lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 ">You deserve the best</h2>
+
+        <img class="h-auto max-w-full mx-auto" src="assets/course_score_freq.png" alt="image description">
+
+        <p class="mb-6 font-light text-gray-500  md:text-lg">Most Harvard classes have very high ratings. Take those.
+        </p>
+        <a target="_blank" href="https://github.com/jeqcho/harvard_gem_finder"
+          class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none ">View
+          more analysis on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white pb-8">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-10 lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 ">Comments and suggestions
+        </h2>
+        <p class="mb-6 font-light text-gray-500  md:text-lg">Have a gem you want to share or had a bad experience with a
+          gem above?</p>
+        <a target="_blank" href="https://forms.gle/WV5ttzPpvHAHNVLu7"
+          class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none ">Tell
+          us! (Google Form)</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white pb-8">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-10 lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 ">Want more?</h2>
+        <p class="mb-6 font-light text-gray-500  md:text-lg">Download the full analysis of all FAS spring classes,
+          including their "gem" score, sentiment score, best comment, worse comment and more</p>
+        <a target="_blank"
+          href="https://docs.google.com/spreadsheets/d/19mGYLRMcptT6RGKwpeePzRh4uR6l9zD1/edit?usp=sharing&ouid=117864566802131404367&rtpof=true&sd=true"
+          class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none ">Get
+          the free
+          spreadsheet</a>
+      </div>
+    </div>
+  </section>
+  <div class="h-16"></div>
+
+  <footer
+    class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6  text-xs sm:text-normal">
+    <span class="text-xs sm:text-sm text-gray-500 sm:text-center ">© 2023 Je Qin Chooi (MIT License)<br>Course metadata
+      and
+      evaluations © 2022-2023 The President and Fellows of Harvard College.
+    </span>
+    <ul class="flex flex-wrap items-center sm:pl-3 mt-3 text-xs sm:text-sm  text-gray-500  sm:mt-0">
+      <li>
+        <a target="_blank" href="/archive" class="mr-4 hover:underline md:mr-6 ">Archive</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://stalk.chojeq.com" class="mr-4 hover:underline md:mr-6 ">Contact me</a>
+      </li>
+      <li>
+        <a target="_blank" href="https://github.com/jeqcho/harvard_gem_finder" class="hover:underline md:mr-6 ">Code</a>
+      </li>
+    </ul>
+  </footer>
+
+</body>
