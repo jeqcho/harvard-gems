@@ -6,3 +6,8 @@ This is the repository for the [website](https://jeqcho.github.io/harvard-gems) 
 If you found it useful, you can
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jeqcho)
+
+
+## Notes
+Redeploy the website after changes are made through
+`ng deploy`

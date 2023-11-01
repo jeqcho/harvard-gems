@@ -74,18 +74,20 @@ export class Spring2024Component {
 
     this.special_list = this.special_list.filter(x => x !== 'Expository Writing');
 
-
-
     for (let department of department_list) {
       this.getDataHttp(`assets/data/spring2024/departments/${department}.json`).subscribe(
         (data: any) => {
           this.department_gems[department] = data;
           if (department == "Expository Writing") {
-            this.expos = this.department_gems['Expository Writing'].filter((x: any) => x.course_code != "EXPOS 40")
+            this.expos = this.department_gems['Expository Writing'].filter((x: any) => x.course_code != "EXPOS 40");
+            // exlcude the course name Expository Writing 20 210 and Expository Writing 20 225
+          this.expos = this.expos.filter((x: any) => x.useful_title != "Expository Writing 20 210")
+          this.expos = this.expos.filter((x: any) => x.useful_title != "Expository Writing 20 225")
           }
         }
       )
     }
+
 
 
   }
