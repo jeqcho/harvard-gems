@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainComponent } from './main.component';
+import { Spring2024Component } from './spring2024.component';
 
-describe('MainComponent', () => {
-  let component: MainComponent;
-  let fixture: ComponentFixture<MainComponent>;
+describe('Spring2024Component', () => {
+  let component: Spring2024Component;
+  let fixture: ComponentFixture<Spring2024Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainComponent ]
+      declarations: [ Spring2024Component ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MainComponent);
+    fixture = TestBed.createComponent(Spring2024Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
