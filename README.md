@@ -11,3 +11,9 @@ If you found it useful, you can
 ## Notes
 Redeploy the website after changes are made through
 `ng deploy`
+
+## Contributions
+Contributions are welcome! Please open a pull request.
+
+### Contributor list
+- @jnberkman
