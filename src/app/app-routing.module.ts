@@ -4,14 +4,16 @@ import { ArchiveComponent } from './archive/archive/archive.component';
 import { Fall2023Component } from './archive/fall2023/fall2023.component';
 import { Spring2023Component } from './archive/spring2023/spring2023.component';
 import { Spring2024Component } from './archive/spring2024/spring2024.component';
+import { Fall2024Component } from './fall2024/fall2024.component';
 
 const routes: Routes = [
-  { path: '', component: Spring2024Component },
+  { path: '', component: Fall2024Component },
   { path: 'archive', component: ArchiveComponent },
 
   { path: 'spring-2024', component: Spring2024Component },
   { path: 'fall-2023', component: Fall2023Component },
   { path: 'spring-2023', component: Spring2023Component },
+  { path: 'fall-2024', component: Fall2024Component },
 
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

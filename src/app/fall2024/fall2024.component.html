@@ -1,9 +1,9 @@
 <body class="py-8 px-2 sm:px-6">
 
   <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">Harvard
-    Gems for Spring 2024</h1>
-  <p class="text-lg font-normal text-gray-500 lg:text-xl mb-4">The best gems out of 1,571 classes offered by the
-    Harvard Faculty of Arts and Sciences. Also check out <a href="https://chat.openai.com/g/g-mGNQ21WI6-harvard-gempt">GemPT</a> to ask ChatGPT about these gems!</p>
+    Gems for Fall 2024</h1>
+  <p class="text-lg font-normal text-gray-500 lg:text-xl mb-4">The best gems out of 1,599 classes offered by the
+    Harvard Faculty of Arts and Sciences.</p>
 
 
 
@@ -49,7 +49,7 @@
               <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
             </td>
             <td class="pl-10 pr-4">
-              <a href="{{url_prefix + super_gem.useful_title + url_suffix}}" target="_blank"
+              <a href="{{url_prefix + term + super_gem.useful_title + url_suffix}}" target="_blank"
                 class="font-medium text-blue-600  hover:underline">my.harvard</a>
               <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
                 Guide</a>
@@ -64,7 +64,7 @@
     <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
       <div>
         <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Hidden Gems</p>
-        <p class="text-xs leading-3 text-gray-600 pt-2">Gate-keeping gems with perfect median scores and less than 4 hours of workload. More Hidden Gems at the page bottom.</p>
+        <p class="text-xs leading-3 text-gray-600 pt-2">Gate-kept gems that no one talks about. Perfect median scores and less than 4 hours of workload. More Hidden Gems at the page bottom.</p>
       </div>
     </div>
     <div class="bg-white shadow overflow-y-auto">
@@ -101,7 +101,7 @@
               <p class=" whitespace-normal">{{hidden_gem.best_comment_short}}</p>
             </td>
             <td class="pl-10 pr-4">
-              <a href="{{url_prefix + hidden_gem.useful_title + url_suffix}}" target="_blank"
+              <a href="{{url_prefix + term +hidden_gem.useful_title + url_suffix}}" target="_blank"
                 class="font-medium text-blue-600  hover:underline">my.harvard</a>
               <a href="{{hidden_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
                 Guide</a>
@@ -155,7 +155,7 @@
               <p class=" whitespace-normal">{{great_course.best_comment_first}}</p>
             </td>
             <td class="pl-10 pr-4">
-              <a href="{{url_prefix + great_course.useful_title + url_suffix}}" target="_blank"
+              <a href="{{url_prefix + term +great_course.useful_title + url_suffix}}" target="_blank"
                 class="font-medium text-blue-600  hover:underline">my.harvard</a>
               <a href="{{great_course.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
                 Guide</a>
@@ -206,7 +206,7 @@
               <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
             </td>
             <td class="pl-10 pr-4">
-              <a href="{{url_prefix + super_gem.useful_title + url_suffix}}" target="_blank"
+              <a href="{{url_prefix + term +super_gem.useful_title + url_suffix}}" target="_blank"
                 class="font-medium text-blue-600  hover:underline">my.harvard</a>
               <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
                 Guide</a>
@@ -215,7 +215,7 @@
         </tbody>
       </table>
       <ng-template #noGems>
-        <p class="p-4">We did not find any gems offered by this department in the Spring of 2024.</p>
+        <p class="p-4">We did not find any gems offered by this department in the Fall of 2024.</p>
       </ng-template>
     </div>
   </div>
@@ -261,7 +261,7 @@
               <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
             </td>
             <td class="pl-10 pr-4">
-              <a href="{{url_prefix + super_gem.useful_title + url_suffix}}" target="_blank"
+              <a href="{{url_prefix + term +super_gem.useful_title + url_suffix}}" target="_blank"
                 class="font-medium text-blue-600  hover:underline">my.harvard</a>
               <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
                 Guide</a>
@@ -314,7 +314,7 @@
               <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
             </td>
             <td class="pl-10 pr-4">
-              <a href="{{url_prefix + super_gem.useful_title + url_suffix}}" target="_blank"
+              <a href="{{url_prefix + term +super_gem.useful_title + url_suffix}}" target="_blank"
                 class="font-medium text-blue-600  hover:underline">my.harvard</a>
               <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
                 Guide</a>
@@ -323,7 +323,7 @@
         </tbody>
       </table>
       <ng-template #noGems>
-        <p class="p-4">No gems were found in this department for Spring 2024. There might be classes in the Hidden Gems or Great Courses below.</p>
+        <p class="p-4">No gems were found in this department for Fall 2024. There might be classes in the Hidden Gems or Great Courses below.</p>
       </ng-template>
     </div>
   </div>
@@ -332,6 +332,7 @@
     <div class="px-4 py-10 md:px-10 bg-gray-100 rounded-tl-lg rounded-tr-lg">
       <div>
         <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">All Super Gems</p>
+        <p class="text-xs leading-3 text-gray-600 pt-2">Gems with perfect median ratings</p>
       </div>
     </div>
     <div class="bg-white shadow overflow-y-auto">
@@ -368,7 +369,7 @@
               <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
             </td>
             <td class="pl-10 pr-4">
-              <a href="{{url_prefix + super_gem.useful_title + url_suffix}}" target="_blank"
+              <a href="{{url_prefix + term +super_gem.useful_title + url_suffix}}" target="_blank"
                 class="font-medium text-blue-600  hover:underline">my.harvard</a>
               <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
                 Guide</a>
@@ -384,6 +385,7 @@
       <div>
         <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">All Hidden Gems
         </p>
+        <p class="text-xs leading-3 text-gray-600 pt-2">Classes with perfect median ratings and low workload (<4hrs)</p>
       </div>
     </div>
     <div class="bg-white shadow overflow-y-auto">
@@ -420,7 +422,7 @@
               <p class=" whitespace-normal">{{hidden_gem.best_comment_first}}</p>
             </td>
             <td class="pl-10 pr-4">
-              <a href="{{url_prefix + hidden_gem.useful_title + url_suffix}}" target="_blank"
+              <a href="{{url_prefix + term +hidden_gem.useful_title + url_suffix}}" target="_blank"
                 class="font-medium text-blue-600  hover:underline">my.harvard</a>
               <a href="{{hidden_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
                 Guide</a>
@@ -436,6 +438,7 @@
       <div>
         <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">All Great Courses
         </p>
+        <p class="text-xs leading-3 text-gray-600 pt-2">Classes with perfect median ratings but higher workload (>4hrs)</p>
       </div>
     </div>
     <div class="bg-white shadow overflow-y-auto">
@@ -472,7 +475,7 @@
               <p class=" whitespace-normal">{{super_gem.best_comment_first}}</p>
             </td>
             <td class="pl-10 pr-4">
-              <a href="{{url_prefix + super_gem.useful_title + url_suffix}}" target="_blank"
+              <a href="{{url_prefix + term +super_gem.useful_title + url_suffix}}" target="_blank"
                 class="font-medium text-blue-600  hover:underline">my.harvard</a>
               <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
                 Guide</a>
@@ -517,7 +520,7 @@
     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-10 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 ">Want more?</h2>
-        <p class="mb-6 font-light text-gray-500  md:text-lg">Download the full analysis of all FAS spring classes,
+        <p class="mb-6 font-light text-gray-500  md:text-lg">Download the full analysis of all FAS fall classes,
           including their "gem" score, sentiment score, best comment, worse comment and more</p>
         <a target="_blank"
           href="https://docs.google.com/spreadsheets/d/14xZe5BYsE1dwG5Yy17Dpsk-_3S2Z_BIE/edit?usp=drive_link&ouid=117864566802131404367&rtpof=true&sd=true"
@@ -531,7 +534,7 @@
 
   <footer
     class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6  text-xs sm:text-normal">
-    <span class="text-xs sm:text-sm text-gray-500 sm:text-center ">© 2024 Je Qin Chooi (MIT License)<br>Course metadata
+    <span class="text-xs sm:text-sm text-gray-500 sm:text-center ">© 2024 Je Qin Chooi (open-source license)<br>Course metadata
       and
       evaluations © 2022-2024 The President and Fellows of Harvard College.
     </span>

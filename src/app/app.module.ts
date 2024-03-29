@@ -8,6 +8,7 @@ import { Spring2023Component } from './archive/spring2023/spring2023.component';
 import { ArchiveComponent } from './archive/archive/archive.component';
 import { Fall2023Component } from './archive/fall2023/fall2023.component';
 import { Spring2024Component } from './archive/spring2024/spring2024.component';
+import { Fall2024Component } from './fall2024/fall2024.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { Spring2024Component } from './archive/spring2024/spring2024.component';
     Spring2023Component,
     ArchiveComponent,
     Fall2023Component,
-    Spring2024Component
+    Spring2024Component,
+    Fall2024Component
   ],
   imports: [
     BrowserModule,
