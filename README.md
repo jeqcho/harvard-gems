@@ -14,7 +14,7 @@ If you found it useful, you can
 3. Edit `archive.component.ts`.
 4. Copy over the `output_data` folder from the scraping repo to the folder of the component and rename it to just `data`.
 4. Copy over the `departments` folder from the scraping repo into `assets/data`.
-5. Copy over the `???.component.ts` from another recent component and make necessary changes.
+5. Copy over the `???.component.ts` from another recent component and make necessary changes. You need to handpick the selected Super Gems, Hidden Gems, and Great Courses.
 6. Copy over the `???.component.html` from another recent component and make necessary changes. Remember to change the number of classes near the top, and the link at the bottom. Simply count the number of files in the `myharvard` folder in the scraping repo, or count the number of files in the `QGuide`, which can be more accurate (for the past year, and this is the number reported at the website).
 7. Run `ng serve` to test it out.
 8. `ng deploy`
