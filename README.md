@@ -31,5 +31,4 @@ Contributions are welcome! Please open a pull request.
 
 - FIX: Checking [https://hugems.net/archive] on a HTTP status checker like [https://httpstatus.io/] shows that the webpage returns 404, though it renders the archive page correctly.
 - IMPROVEMENT: Since this project was completed and since maintained before the LLMs took off, it might be helpful to do a scan on Cursor to identify possible bugs and improvement suggestions, as well as cleaning up code and making it more readable.
-- Make footer consistent across all pages
 - Fix Expos 20 for Fall 2025
