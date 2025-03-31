@@ -17,6 +17,7 @@ We use Angular CLI, so make sure to download it beforehand.
 4. Make a new folder under `assets/data/` with the appriopriate file name and over the contents of the output folder from the scraping repo (e.g. the folder `2025_Fall_2024_Fall` which contains `super_gems.json` and the `departments` folder).
 5. Copy over the `???.component.ts` from another recent component and make necessary changes. You need to handpick the featured ~5 Super Gems, Hidden Gems, and Great Courses from `course_ratings_analysis.ipynb` in the scraping repo (look for the cells that present to you a candidate list of each). Also edit the my.harvard search term.
 6. Copy over the `???.component.html` from another recent component and make necessary changes. Remember to change the number of classes near the top, and the link at the bottom. Simply count the number of rows in `release/myharvard/YEAR_TERM.csv` in the scraping repo.
+7. Move the old component folder to `src/app/archive`, and update the import at `app.module.ts` and `app-routing.module.ts`.
 7. Run `ng serve` to test it out.
 8. `ng deploy`
 
