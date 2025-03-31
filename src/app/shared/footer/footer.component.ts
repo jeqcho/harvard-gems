@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-
+  startYear = 2022;
+  currentYear = new Date().getFullYear();
+  yearRange = `${this.startYear}-${this.currentYear}`;
 }
