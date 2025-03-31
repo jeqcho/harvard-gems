@@ -45,7 +45,7 @@ export class Fall2025Component implements OnInit {
         "HEB 123",
         "PSY 1813",
         "GENED 1025",
-        "PHIL 9",
+        "OEB 104",
       ].includes(x.course_code));
     });
 
