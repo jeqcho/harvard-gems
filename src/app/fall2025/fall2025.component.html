@@ -1,0 +1,555 @@
+<body class="py-8 px-2 sm:px-6">
+
+    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">Harvard
+      Gems for Fall 2025</h1>
+    <p class="text-lg font-normal text-gray-500 lg:text-xl mb-4">The best gems out of 2,530 classes offered by Harvard.</p>
+  
+  
+  
+  
+    <div class="w-full pt-5 pb-10">
+      <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+        <div>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Super Gems 💎</p>
+          <p class="text-xs leading-3 text-gray-600 pt-2">The best among the well-known gems. 5/5 median ratings. More Super Gems at the page bottom.</p>
+        </div>
+      </div>
+      <div class="bg-white shadow overflow-y-auto">
+        <table class="w-full whitespace-nowrap">
+          <thead>
+            <tr class="h-16 w-full text-sm leading-none text-gray-800">
+              <th class="font-normal text-left pl-4">Course</th>
+              <th class="font-normal text-left pl-12">Rating</th>
+              <th class="font-normal text-left pl-10">Workload</th>
+              <th class="font-normal text-left pl-10">Selected comments</th>
+              <th class="font-normal text-left pl-10">Links</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr *ngFor="let super_gem of selected_super_gems"
+              class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center py-2">
+                  <div>
+                    <p class="font-medium">{{super_gem.course_code}}</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                      {{super_gem.course_title_2025}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">{{super_gem.course_score_mean}} (Overall)</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">{{super_gem.rec_score_mean}} (Recommend)</p>
+              </td>
+              <td class="pl-10">
+                <p class="font-medium">{{super_gem.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+              </td>
+              <td class="pl-10 py-2">
+                <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
+              </td>
+              <td class="pl-10 pr-4">
+                <a href="{{url_prefix + term + super_gem.course_id + url_suffix}}" target="_blank"
+                  class="font-medium text-blue-600  hover:underline">my.harvard</a>
+                <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                  Guide</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class="w-full pt-5 pb-10">
+      <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+        <div>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Hidden Gems</p>
+          <p class="text-xs leading-3 text-gray-600 pt-2">Gate-kept gems that no one talks about. Classes with 5/5 median score, &lt;4 hours of workload, and no mention of "gem" in the comments. More Hidden Gems at the page bottom.</p>
+        </div>
+      </div>
+      <div class="bg-white shadow overflow-y-auto">
+        <table class="w-full whitespace-nowrap">
+          <thead>
+            <tr class="h-16 w-full text-sm leading-none text-gray-800">
+              <th class="font-normal text-left pl-4">Course</th>
+              <th class="font-normal text-left pl-12">Rating</th>
+              <th class="font-normal text-left pl-10">Workload</th>
+              <th class="font-normal text-left pl-10">Selected comments</th>
+              <th class="font-normal text-left pl-10">Links</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr *ngFor="let hidden_gem of selected_hidden_gems"
+              class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center py-2">
+                  <div>
+                    <p class="font-medium">{{hidden_gem.course_code}}</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                      {{hidden_gem.course_title_2025}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">{{hidden_gem.course_score_mean}} (Overall)</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">{{hidden_gem.rec_score_mean}} (Recommend)</p>
+              </td>
+              <td class="pl-10">
+                <p class="font-medium">{{hidden_gem.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+              </td>
+              <td class="pl-10 py-2">
+                <p class=" whitespace-normal">{{hidden_gem.best_comment_short}}</p>
+              </td>
+              <td class="pl-10 pr-4">
+                <a href="{{url_prefix + term +hidden_gem.course_id + url_suffix}}" target="_blank"
+                  class="font-medium text-blue-600  hover:underline">my.harvard</a>
+                <a href="{{hidden_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                  Guide</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  
+    <div class="w-full pt-5 pb-10">
+      <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+        <div>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Great Courses
+          </p>
+          <p class="text-xs leading-3 text-gray-600 pt-2">Classes with 5/5 median score but higher workload (>4hrs). More Great Courses at the page bottom.</p>
+        </div>
+      </div>
+      <div class="bg-white shadow overflow-y-auto">
+        <table class="w-full whitespace-nowrap">
+          <thead>
+            <tr class="h-16 w-full text-sm leading-none text-gray-800">
+              <th class="font-normal text-left pl-4">Course</th>
+              <th class="font-normal text-left pl-12">Rating</th>
+              <th class="font-normal text-left pl-10">Workload</th>
+              <th class="font-normal text-left pl-10">Selected comments</th>
+              <th class="font-normal text-left pl-10">Links</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr *ngFor="let great_course of selected_great_courses"
+              class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center py-2">
+                  <div>
+                    <p class="font-medium">{{great_course.course_code}}</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                      {{great_course.course_title_2025}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">{{great_course.course_score_mean}} (Overall)</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">{{great_course.rec_score_mean}} (Recommend)</p>
+              </td>
+              <td class="pl-10">
+                <p class="font-medium">{{great_course.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+              </td>
+              <td class="pl-10 py-2">
+                <p class=" whitespace-normal">{{great_course.best_comment_first}}</p>
+              </td>
+              <td class="pl-10 pr-4">
+                <a href="{{url_prefix + term +great_course.course_id + url_suffix}}" target="_blank"
+                  class="font-medium text-blue-600  hover:underline">my.harvard</a>
+                <a href="{{great_course.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                  Guide</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class="w-full pt-5 pb-10" *ngFor="let department of special_list">
+      <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+        <div>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Gems in {{department}}</p>
+        </div>
+      </div>
+      <div class="bg-white shadow overflow-y-auto" *ngIf="department_gems[department]">
+        <table class="w-full whitespace-nowrap" *ngIf="department_gems[department].length; else noGems">
+          <thead>
+            <tr class="h-16 w-full text-sm leading-none text-gray-800">
+              <th class="font-normal text-left pl-4">Course</th>
+              <th class="font-normal text-left pl-12">Rating</th>
+              <th class="font-normal text-left pl-10">Workload</th>
+              <th class="font-normal text-left pl-10">Selected comments</th>
+              <th class="font-normal text-left pl-10">Links</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr *ngFor="let super_gem of department_gems[department]"
+              class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div>
+                    <p class="font-medium">{{super_gem.course_code}}</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                      {{super_gem.course_title_2025}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">{{super_gem.course_score_mean}} (Overall)</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">{{super_gem.rec_score_mean}} (Recommend)</p>
+              </td>
+              <td class="pl-10">
+                <p class="font-medium">{{super_gem.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+              </td>
+              <td class="pl-10 py-2">
+                <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
+              </td>
+              <td class="pl-10 pr-4">
+                <a href="{{url_prefix + term +super_gem.course_id + url_suffix}}" target="_blank"
+                  class="font-medium text-blue-600  hover:underline">my.harvard</a>
+                <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                  Guide</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-template #noGems>
+          <p class="p-4">We did not find any gems offered by this department in the Fall of 2025.</p>
+        </ng-template>
+      </div>
+    </div>
+  
+    <!-- commenting this out for fall 2025 since not implemented yet -->
+    <!-- <div class="w-full pt-5 pb-10">
+      <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+        <div>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Gems in Expository Writing
+          </p>
+        </div>
+      </div>
+      <div class="bg-white shadow overflow-y-auto">
+        <table class="w-full whitespace-nowrap">
+          <thead>
+            <tr class="h-16 w-full text-sm leading-none text-gray-800">
+              <th class="font-normal text-left pl-4">Course</th>
+              <th class="font-normal text-left pl-12">Rating</th>
+              <th class="font-normal text-left pl-10">Workload</th>
+              <th class="font-normal text-left pl-10">Selected comments</th>
+              <th class="font-normal text-left pl-10">Links</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr *ngFor="let super_gem of expos"
+              class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div>
+                    <p class="font-medium">{{super_gem.course_code}}</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                      {{super_gem.course_title_2025}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">{{super_gem.course_score_mean}} (Overall)</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">{{super_gem.rec_score_mean}} (Recommend)</p>
+              </td>
+              <td class="pl-10">
+                <p class="font-medium">{{super_gem.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+              </td>
+              <td class="pl-10 py-2">
+                <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
+              </td>
+              <td class="pl-10 pr-4">
+                <a href="{{url_prefix + term +super_gem.course_id + url_suffix}}" target="_blank"
+                  class="font-medium text-blue-600  hover:underline">my.harvard</a>
+                <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                  Guide</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> -->
+  
+    <h2 class="text-4xl font-extrabold pt-10">Gems by department</h2>
+  
+    <div class="w-full pt-5 pb-10" *ngFor="let department of partial_department_list">
+      <div class="px-4 md:px-10 py-4 md:py-7 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+        <div>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">{{department}}</p>
+        </div>
+      </div>
+      <div class="bg-white shadow overflow-y-auto" *ngIf="department_gems[department]">
+        <table class="w-full whitespace-nowrap" *ngIf="department_gems[department].length; else noGems">
+          <thead>
+            <tr class="h-16 w-full text-sm leading-none text-gray-800">
+              <th class="font-normal text-left pl-4">Course</th>
+              <th class="font-normal text-left pl-12">Rating</th>
+              <th class="font-normal text-left pl-10">Workload</th>
+              <th class="font-normal text-left pl-10">Selected comments</th>
+              <th class="font-normal text-left pl-10">Links</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr *ngFor="let super_gem of department_gems[department]"
+              class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div>
+                    <p class="font-medium">{{super_gem.course_code}}</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                      {{super_gem.course_title_2025}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">{{super_gem.course_score_mean}} (Overall)</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">{{super_gem.rec_score_mean}} (Recommend)</p>
+              </td>
+              <td class="pl-10">
+                <p class="font-medium">{{super_gem.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+              </td>
+              <td class="pl-10 py-2">
+                <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
+              </td>
+              <td class="pl-10 pr-4">
+                <a href="{{url_prefix + term +super_gem.course_id + url_suffix}}" target="_blank"
+                  class="font-medium text-blue-600  hover:underline">my.harvard</a>
+                <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                  Guide</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-template #noGems>
+          <p class="p-4">No gems were found in this department for Fall 2025. There might be classes in the Hidden Gems or Great Courses below.</p>
+        </ng-template>
+      </div>
+    </div>
+  
+    <div class="w-full pt-5 pb-10">
+      <div class="px-4 py-10 md:px-10 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+        <div>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">All Super Gems</p>
+          <p class="text-xs leading-3 text-gray-600 pt-2">Gems with 5/5 median ratings</p>
+        </div>
+      </div>
+      <div class="bg-white shadow overflow-y-auto">
+        <table class="w-full whitespace-nowrap">
+          <thead>
+            <tr class="h-16 w-full text-sm leading-none text-gray-800">
+              <th class="font-normal text-left pl-4">Course</th>
+              <th class="font-normal text-left pl-12">Rating</th>
+              <th class="font-normal text-left pl-10">Workload</th>
+              <th class="font-normal text-left pl-10">Selected comments</th>
+              <th class="font-normal text-left pl-10">Links</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr *ngFor="let super_gem of super_gems"
+              class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div>
+                    <p class="font-medium">{{super_gem.course_code}}</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                      {{super_gem.course_title_2025}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">{{super_gem.course_score_mean}} (Overall)</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">{{super_gem.rec_score_mean}} (Recommend)</p>
+              </td>
+              <td class="pl-10">
+                <p class="font-medium">{{super_gem.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+              </td>
+              <td class="pl-10 py-2">
+                <p class=" whitespace-normal">{{super_gem.best_gem_comment_short}}</p>
+              </td>
+              <td class="pl-10 pr-4">
+                <a href="{{url_prefix + term +super_gem.course_id + url_suffix}}" target="_blank"
+                  class="font-medium text-blue-600  hover:underline">my.harvard</a>
+                <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                  Guide</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class="w-full pt-5 pb-10">
+      <div class="px-4 py-10 md:px-10 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+        <div>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">All Hidden Gems
+          </p>
+          <p class="text-xs leading-3 text-gray-600 pt-2">Classes with 5/5 median score and low workload (&lt;4hrs). No comments mentioned the word "gem".</p>
+        </div>
+      </div>
+      <div class="bg-white shadow overflow-y-auto">
+        <table class="w-full whitespace-nowrap">
+          <thead>
+            <tr class="h-16 w-full text-sm leading-none text-gray-800">
+              <th class="font-normal text-left pl-4">Course</th>
+              <th class="font-normal text-left pl-12">Rating</th>
+              <th class="font-normal text-left pl-10">Workload</th>
+              <th class="font-normal text-left pl-10">Selected comments</th>
+              <th class="font-normal text-left pl-10">Links</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr *ngFor="let hidden_gem of hidden_gems"
+              class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div>
+                    <p class="font-medium">{{hidden_gem.course_code}}</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                      {{hidden_gem.course_title_2025}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">{{hidden_gem.course_score_mean}} (Overall)</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">{{hidden_gem.rec_score_mean}} (Recommend)</p>
+              </td>
+              <td class="pl-10">
+                <p class="font-medium">{{hidden_gem.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+              </td>
+              <td class="pl-10 py-2">
+                <p class=" whitespace-normal">{{hidden_gem.best_comment_first}}</p>
+              </td>
+              <td class="pl-10 pr-4">
+                <a href="{{url_prefix + term +hidden_gem.course_id + url_suffix}}" target="_blank"
+                  class="font-medium text-blue-600  hover:underline">my.harvard</a>
+                <a href="{{hidden_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                  Guide</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <div class="w-full pt-5 pb-10">
+      <div class="px-4 py-10 md:px-10 bg-gray-100 rounded-tl-lg rounded-tr-lg">
+        <div>
+          <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">All Great Courses
+          </p>
+          <p class="text-xs leading-3 text-gray-600 pt-2">Classes with 5/5 median score but higher workload (>4hrs)</p>
+        </div>
+      </div>
+      <div class="bg-white shadow overflow-y-auto">
+        <table class="w-full whitespace-nowrap">
+          <thead>
+            <tr class="h-16 w-full text-sm leading-none text-gray-800">
+              <th class="font-normal text-left pl-4">Course</th>
+              <th class="font-normal text-left pl-12">Rating</th>
+              <th class="font-normal text-left pl-10">Workload</th>
+              <th class="font-normal text-left pl-10">Selected comments</th>
+              <th class="font-normal text-left pl-10">Links</th>
+            </tr>
+          </thead>
+          <tbody class="w-full">
+            <tr *ngFor="let super_gem of great_courses"
+              class="h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-100">
+              <td class="pl-4 cursor-pointer">
+                <div class="flex items-center">
+                  <div>
+                    <p class="font-medium">{{super_gem.course_code}}</p>
+                    <p class="text-xs leading-3 text-gray-600 pt-2 w-28 sm:w-auto whitespace-normal sm:whitespace-nowrap">
+                      {{super_gem.course_title_2025}}</p>
+                  </div>
+                </div>
+              </td>
+              <td class="pl-12">
+                <p class="text-sm font-medium leading-none text-gray-800">{{super_gem.course_score_mean}} (Overall)</p>
+                <p class="text-xs leading-3 text-gray-600 mt-2">{{super_gem.rec_score_mean}} (Recommend)</p>
+              </td>
+              <td class="pl-10">
+                <p class="font-medium">{{super_gem.workload_score_mean}} <span class="font-normal">hrs/week</span></p>
+              </td>
+              <td class="pl-10 py-2">
+                <p class=" whitespace-normal">{{super_gem.best_comment_first}}</p>
+              </td>
+              <td class="pl-10 pr-4">
+                <a href="{{url_prefix + term +super_gem.course_id + url_suffix}}" target="_blank"
+                  class="font-medium text-blue-600  hover:underline">my.harvard</a>
+                <a href="{{super_gem.link}}" target="_blank" class="pl-4 font-medium text-blue-600  hover:underline">Q
+                  Guide</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <section class="bg-white">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-10 lg:px-6">
+        <div class="mx-auto max-w-screen-sm text-center">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 ">You deserve the best</h2>
+  
+          <img class="h-auto max-w-full mx-auto" src="assets/course_score_freq.png" alt="image description">
+  
+          <p class="mb-6 font-light text-gray-500  md:text-lg">Most Harvard classes have very high ratings. Take those.
+          </p>
+          <a target="_blank" href="https://github.com/jeqcho/harvard_gem_finder"
+            class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none ">View
+            more analysis on GitHub</a>
+        </div>
+      </div>
+    </section>
+  
+    <section class="bg-white pb-8">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-10 lg:px-6">
+        <div class="mx-auto max-w-screen-sm text-center">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 ">Comments and suggestions
+          </h2>
+          <p class="mb-6 font-light text-gray-500  md:text-lg">Have a gem you want to share or had a bad experience with a
+            gem above?</p>
+          <a target="_blank" href="https://forms.gle/WV5ttzPpvHAHNVLu7"
+            class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none ">Tell
+            us! (Google Form)</a>
+        </div>
+      </div>
+    </section>
+  
+    <section class="bg-white pb-8">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-10 lg:px-6">
+        <div class="mx-auto max-w-screen-sm text-center">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-gray-900 ">Want more?</h2>
+          <p class="mb-6 font-light text-gray-500  md:text-lg">Download the full analysis of all FAS fall classes,
+            including their "gem" score, sentiment score, best comment, worse comment and more</p>
+          <a target="_blank"
+            href="https://docs.google.com/spreadsheets/d/1wxweV1Kk81OcrgwciP6eSclHiDiSeZxWs0PWkZG1oGE/edit?usp=sharing"
+            class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none ">Get
+            the free
+            spreadsheet</a>
+        </div>
+      </div>
+    </section>
+    <div class="h-16"></div>
+  
+    <footer
+      class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6  text-xs sm:text-normal">
+      <span class="text-xs sm:text-sm text-gray-500 sm:text-center ">© 2022-2025 Jay Chooi (open-source license)<br>Course metadata
+        and
+        evaluations © 2022-2025 The President and Fellows of Harvard College.
+      </span>
+      <ul class="flex flex-wrap items-center sm:pl-3 mt-3 text-xs sm:text-sm  text-gray-500  sm:mt-0">
+        <li>
+          <a target="_blank" href="/archive" class="mr-4 hover:underline md:mr-6 ">Archive</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://stalk.chojeq.com" class="mr-4 hover:underline md:mr-6 ">Contact me</a>
+        </li>
+        <li>
+          <a target="_blank" href="https://github.com/jeqcho/harvard_gem_finder" class="hover:underline md:mr-6 ">Code</a>
+        </li>
+      </ul>
+    </footer>
+  
+  </body>
+  
