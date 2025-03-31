@@ -16,6 +16,7 @@ export class Fall2025Component implements OnInit {
   special_list = [
     "General Education",
     "First Year Seminar Program",
+    'Expository Writing',
   ]
   partial_department_list: any;
   selected_great_courses: any;
