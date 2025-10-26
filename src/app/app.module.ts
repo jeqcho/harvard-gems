@@ -10,8 +10,9 @@ import { Fall2023Component } from './archive/fall2023/fall2023.component';
 import { Spring2024Component } from './archive/spring2024/spring2024.component';
 import { Fall2024Component } from './archive/fall2024/fall2024.component';
 import { Spring2025Component } from './archive/spring2025/spring2025.component';
-import { Fall2025Component } from './fall2025/fall2025.component';
+import { Fall2025Component } from './archive/fall2025/fall2025.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { Spring2026Component } from './spring2026/spring2026.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     Fall2024Component,
     Spring2025Component,
     Fall2025Component,
-    FooterComponent
+    FooterComponent,
+    Spring2026Component
   ],
   imports: [
     BrowserModule,

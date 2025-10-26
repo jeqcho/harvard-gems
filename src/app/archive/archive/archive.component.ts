@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ArchiveComponent {
   archive_list = [
+    ["Spring 2026",'/spring-2026',''], // spreadsheet support dropped since fall 2025
     ["Fall 2025",'/fall-2025',''], // spreadsheet support dropped since fall 2025
     ["Spring 2025",'/spring-2025','https://docs.google.com/spreadsheets/d/1wxweV1Kk81OcrgwciP6eSclHiDiSeZxWs0PWkZG1oGE/edit?usp=sharing'],
     ["Fall 2024",'/fall-2024','https://docs.google.com/spreadsheets/d/1MSukpV1LZGVixyT9ooc7Hpoy2Bbm6GRJlz8GmG63Hy0/edit?usp=sharing'],
